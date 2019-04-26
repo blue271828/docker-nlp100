@@ -12,10 +12,6 @@ trim_trailing_whitespace = true
 indent_size = 4
 indent_style = space
 
-[*.sh]
-indent_size = 2
-indent_style = space
-
-[*.rb]
+[*.{yml,yaml}]
 indent_size = 2
 indent_style = space
