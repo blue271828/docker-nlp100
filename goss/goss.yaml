@@ -3,6 +3,10 @@ command:
     exit-status: 0
     stdout:
       - /jupyter-notebook/
+  pip list:
+    exit-status: 0
+    stdout:
+      - /^regex\s/
 package:
   curl:
     installed: true
