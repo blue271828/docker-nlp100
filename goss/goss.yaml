@@ -3,3 +3,6 @@ command:
     exit-status: 0
     stdout:
       - /jupyter-notebook/
+package:
+  curl:
+    installed: true
