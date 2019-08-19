@@ -6,6 +6,7 @@ USER root
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
             curl \
+            fonts-takao \
             gcc \
             mecab \
             libtool-bin \
