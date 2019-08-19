@@ -62,6 +62,8 @@ RUN cd /opt && \
     rm -rf /opt/cabocha
 
 # Install Stanford CoreNLP from source
+ARG APT_OPTS
+ENV APT_OPTS $APT_OPTS
 ENV CORENLP_HOME=/opt/CoreNLP
 RUN cd /opt && \
     git clone --depth 1 https://github.com/stanfordnlp/CoreNLP.git && \
