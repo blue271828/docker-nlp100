@@ -1,6 +1,6 @@
 # 言語処理100本ノック 2015用 Docker イメージ
 
-http://www.cl.ecei.tohoku.ac.jp/nlp100/
+[![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/blue271828/nlp100-2015.svg)](https://hub.docker.com/r/blue271828/nlp100-2015)
 
 
 
