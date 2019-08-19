@@ -1,2 +1,6 @@
 matplotlib==3.0.2
+plyvel==1.0.5
+pydot==1.4.1
+pymongo==3.7.2
 regex==2018.11.22
+stemming==1.0.1
