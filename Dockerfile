@@ -1,16 +1,34 @@
-FROM jupyter/base-notebook:latest
+FROM jupyter/base-notebook:87210526f381
 LABEL maintainer = "blue271828"
 
 
 USER root
 
+# Install some dependency packages for notebook with ubuntu package manager
 RUN apt-get update && apt-get install -y --no-install-recommends \
+            ant \
+            autoconf \
+            automake \
+            autotools-dev \
             curl \
+            default-jdk \
+            file \
             fonts-takao \
+            g++ \
             gcc \
+            git \
+            graphviz \
+            libmecab-dev \
+            libtool-bin \
+            make \
             mecab \
             mecab-ipadic-utf8 \
-            libtool-bin \
+            mongodb \
+            patch \
+            ssh \
+            sudo \
+            swig \
+            xz-utils \
             && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
@@ -66,5 +84,6 @@ RUN curl -OL https://github.com/google/leveldb/archive/v${LEVELDB_VERSION}.tar.g
 
 USER $NB_USER
 
+# Install dependency PyPI packages for notebook
 COPY requirements.txt requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
