@@ -51,6 +51,18 @@ RUN cd /opt && \
     ant jar && \
     curl -LO http://nlp.stanford.edu/software/stanford-corenlp-models-current.jar
 
+# Install LevelDB
+ARG LEVELDB_VERSION="1.19"
+RUN curl -OL https://github.com/google/leveldb/archive/v${LEVELDB_VERSION}.tar.gz && \
+    tar xvf v${LEVELDB_VERSION}.tar.gz && \
+    rm -f v${LEVELDB_VERSION}.tar.gz && \
+    cd leveldb-${LEVELDB_VERSION} && \
+    make && \
+    scp out-static/lib* out-shared/lib* /usr/local/lib && \
+    cd include && \
+    scp -r leveldb /usr/local/include && \
+    ldconfig
+
 
 USER $NB_USER
 
