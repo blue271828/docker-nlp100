@@ -43,9 +43,16 @@ RUN cd /opt && \
     ldconfig && \
     rm -rf /opt/cabocha
 
+# Install Stanford CoreNLP from source
+ENV CORENLP_HOME=/opt/CoreNLP
+RUN cd /opt && \
+    git clone --depth 1 https://github.com/stanfordnlp/CoreNLP.git && \
+    cd CoreNLP && \
+    ant jar && \
+    curl -LO http://nlp.stanford.edu/software/stanford-corenlp-models-current.jar
+
 
 USER $NB_USER
 
 COPY requirements.txt requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
-
