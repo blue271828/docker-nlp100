@@ -9,6 +9,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
             fonts-takao \
             gcc \
             mecab \
+            mecab-ipadic-utf8 \
             libtool-bin \
             && \
     apt-get clean && \
