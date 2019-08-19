@@ -10,3 +10,5 @@ command:
 package:
   curl:
     installed: true
+  mecab:
+    installed: true
