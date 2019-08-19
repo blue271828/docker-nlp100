@@ -9,4 +9,5 @@ http://www.cl.ecei.tohoku.ac.jp/nlp100/
 - [第1章: 準備運動](notebook/chapter01.ipynb)
 - [第2章: UNIXコマンドの基礎](notebook/chapter02.ipynb)
 - [第3章: 正規表現](notebook/chapter03.ipynb)
+- [第4章: 形態素解析](notebook/chapter04.ipynb)
 
