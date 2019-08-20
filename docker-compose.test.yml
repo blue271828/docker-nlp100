@@ -4,7 +4,7 @@ services:
     build:
       context: .
       args:
-        - APT_OPTS="-Xms512m -Xmx1024m -Xss1024k"
+        - ANT_OPTS="-Xms512m -Xmx1024m -Xss1024k"
     image: nlp100-2015
   sut:
     image: kiwicom/dgoss
