@@ -28,6 +28,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
             ssh \
             sudo \
             swig \
+            unzip \
             xz-utils \
             && \
     apt-get clean && \
@@ -61,15 +62,12 @@ RUN cd /opt && \
     ldconfig && \
     rm -rf /opt/cabocha
 
-# Install Stanford CoreNLP from source
-ARG ANT_OPTS
-ENV ANT_OPTS $ANT_OPTS
-ENV CORENLP_HOME=/opt/CoreNLP
+# Install Stanford CoreNLP
 RUN cd /opt && \
-    git clone --depth 1 https://github.com/stanfordnlp/CoreNLP.git && \
-    cd CoreNLP && \
-    ant jar && \
-    curl -LO http://nlp.stanford.edu/software/stanford-corenlp-models-current.jar
+    curl -O -L http://nlp.stanford.edu/software/stanford-corenlp-full-2018-10-05.zip && \
+    unzip stanford-corenlp-full-2018-10-05.zip && \
+    rm -f stanford-corenlp-full-2018-10-05.zip && \
+    ln -s stanford-corenlp-full-2018-10-05 stanford-corenlp
 
 # Install LevelDB
 ARG LEVELDB_VERSION="1.19"

@@ -1,10 +1,7 @@
 version: '3'
 services:
   nlp100-2015:
-    build:
-      context: .
-      args:
-        - ANT_OPTS="-Xms512m -Xmx1024m -Xss1024k"
+    build: .
     image: nlp100-2015
   sut:
     image: kiwicom/dgoss
